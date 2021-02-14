@@ -28,18 +28,19 @@ route('/', 'home', function() {
             return response.json();
           })
           .then(function (parsedResponse) {
-            verifyData(parsedResponse.message);
+            verifyData(parsedResponse);
           })
           .catch(err => {
             //log below is for developing purpose on errors :)
-            console.log('err:',err)
+            //console.log('err:',err)
           });
 
       const verifyData = (res) => {
-        if (res === 'Login success!') {
+        console.log(res)
+        if (res.token) {
           window.location.href="#/success";
-        } else if (res === 'Wrong password!') {
-          alert('Login Failed')
+        } else if (res.error) {
+          alert(res.message)
           this.$refresh();
         }
       }
