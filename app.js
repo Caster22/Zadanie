@@ -36,7 +36,6 @@ route('/', 'home', function() {
           });
 
       const verifyData = (res) => {
-        console.log(res)
         if (res.token) {
           window.location.href="#/success";
         } else if (res.error) {
