@@ -15,9 +15,7 @@ const chosenTemplate = str => {
 
   const el = new DOMParser();
   const parsedHtml = el.parseFromString(temp(), 'text/html');
-  const template = parsedHtml.getElementById(str);
-  console.log(template);
-  return template;
+  return parsedHtml.getElementById(str);
 };
 
 export const engine = (str, data) => {
