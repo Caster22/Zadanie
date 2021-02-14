@@ -38,7 +38,7 @@ route('/', 'home', function() {
       const verifyData = (res) => {
         if (res.token) {
           window.location.href="#/success";
-        } else if (res.error) {
+        } else if (res.error === true) {
           alert(res.message)
           this.$refresh();
         }
