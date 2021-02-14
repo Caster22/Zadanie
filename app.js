@@ -1,11 +1,16 @@
 import { route } from './router';
 
 route('/', 'home', function() {
-  this.where = 'here';
+  this.where = 'Log in';
+  this.post = 'start';
+  this.$on('.submit-btn', 'click', () => {
+    this.post = 'end';
+    this.$refresh();
+  })
 });
 
-route('/ex1', 'example1', function() {
-  this.title = 'Example 1';
+route('/success', 'success', function() {
+  this.title = 'Success';
 });
 
 route('/ex2', 'example2', function() {

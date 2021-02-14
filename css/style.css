@@ -1,0 +1,15 @@
+body {
+    background-color: darkslategrey;
+}
+
+.link {
+    color: antiquewhite;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.link:hover {
+    color: darkgoldenrod;
+    transition: 0.3s;
+}
